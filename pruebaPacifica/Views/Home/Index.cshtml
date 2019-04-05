@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="content">
+        <div class="formFrame">
+            <form action="/registro" method="post">
+                <input class="customInput" type="text" name="nombre" value="" placeholder="Nombre" />
+                <input class="customInput" type="text" name="apellido" value="" placeholder="Apellido" />
+                <input class="customInput" type="text" name="documento" value="" placeholder="Documento" />
+                <input class="customInput" type="text" name="email" value="" placeholder="Email" />
+                <input class="customInput" type="text" name="fecha de nacimiento" value="" placeholder="Fecha de nacimiento" />
+                <input class="customInput" type="text" name="celular" value="" placeholder="Celular" />
+                <label class="labelCheck">Parroquia</label>
+                <input class="customInput" name="option" type="checkbox" value="" id="parroquiaCheck" />
+                <select class="customInput hidde">
+                    <option value="Provincia">Provincia</option>
+                    <option value="p1">Medellin</option>
+                </select>
+                <select class="customInput hidde">
+                    <option value="Canton">Canton</option>
+                </select>
+                <select class="customInput hidde">
+                    <option value="Parroquia">Parroquia</option>
+                </select>
+                <hr class="whiteHr" />
+                <label class="labelCheck">Motivo</label>
+                <select class="customInput">
+                    <option value="Motivo">Preguntas</option>
+                    <option value="Motivo">Quejas</option>
+                    <option value="Motivo">Reclamos</option>
+                    <option value="Motivo">Sujerencias</option>
+                </select>
+                <input class="customInput" type="text" name="mensaje" value="" placeholder="Mensaje" />
+                <div class="center-div">
+                    <input class="btn-success btnSubmit" type="submit" value="Enviar" />
+                </div>
+            </form>
+        </div>
+    </div>
