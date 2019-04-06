@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net.Http;
+
 
 namespace pruebaPacifica.Controllers
 {
@@ -30,6 +32,10 @@ namespace pruebaPacifica.Controllers
         {
             ViewBag.Message = "registro";
 
+            return View();
+        }
+        public ActionResult Departament()
+        {
             return View();
         }
     }
