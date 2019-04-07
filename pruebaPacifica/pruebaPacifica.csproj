@@ -158,6 +158,24 @@
     <Compile Include="Models\Provincia.cs">
       <DependentUpon>ModeloFiltro.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Registro.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registro.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Registro.cs">
+      <DependentUpon>Registro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Registro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registro.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Registro1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registro.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +197,16 @@
       <DependentUpon>ModeloFiltro.edmx</DependentUpon>
       <LastGenOutput>ModeloFiltro.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Registro.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Registro.edmx</DependentUpon>
+      <LastGenOutput>Registro.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Registro.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Registro.edmx</DependentUpon>
+      <LastGenOutput>Registro1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\ModeloFiltro.edmx">
@@ -187,6 +215,13 @@
     </EntityDeploy>
     <Content Include="Models\ModeloFiltro.edmx.diagram">
       <DependentUpon>ModeloFiltro.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Registro.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Registro.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Registro.edmx.diagram">
+      <DependentUpon>Registro.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -215,11 +250,11 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\provinciasFiltro.cshtml" />
+    <Content Include="Views\Registro\Registrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Filtro\" />
-    <Folder Include="Views\Registro\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,92 @@
+﻿@model IEnumerable<pruebaPacifica.Models.Registro>
+
+    <div class="centerDiv">
+        <h1 class="graciasTitle">¡GRACIAS POR REGISTRARTE!</h1>
+    </div>   
+    <div class="centerDiv">
+        <h1 class="subtitle">Tus datos fueron almacenados correctamente</h1>
+    </div>  
+ <br />
+ <div class="centerDiv">
+    <p class="btnVerReporte">Ver Reporte de registros</p>
+ </div>
+
+
+<table class="table hidde">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.documento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.celular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.distrito_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.motivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mensaje)
+        </th>
+        <th></th>
+
+
+
+    </tr>
+    
+    @if (Model != null)
+    {
+
+
+        foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.documento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.celular)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.distrito_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.motivo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mensaje)
+                </td>
+
+            </tr>
+
+        }
+
+    }
+
+</table>

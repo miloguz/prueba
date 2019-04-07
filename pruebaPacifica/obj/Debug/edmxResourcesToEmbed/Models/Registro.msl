@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RegistroModelStoreContainer" CdmEntityContainer="RegistroContext">
+    <EntitySetMapping Name="Registro">
+      <EntityTypeMapping TypeName="RegistroModel.Registro">
+        <MappingFragment StoreEntitySet="Registro">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="documento" ColumnName="documento" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="nacimiento" ColumnName="nacimiento" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="distrito_id" ColumnName="distrito_id" />
+          <ScalarProperty Name="motivo" ColumnName="motivo" />
+          <ScalarProperty Name="mensaje" ColumnName="mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pruebaPacifica.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,15 @@ namespace pruebaPacifica.Controllers
 {
     public class RegistroController : Controller
     {
-        // GET: Registro
-        public ActionResult Index()
+        RegistroContext bd = new RegistroContext();
+        // POST: Registro
+        [HttpPost]
+        public ActionResult Registrar(Registro r)
         {
-            return View();
+          
+            bd.Registro.Add(r);
+            bd.SaveChanges();
+            return View(bd.Registro.ToList());
         }
     }
 }

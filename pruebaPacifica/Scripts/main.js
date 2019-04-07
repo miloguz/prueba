@@ -2,15 +2,16 @@
 $(document).ready(function () {
 
     $("#departament").change(function(){
-        $('#distritoId').html('<option value="" placeholder="Distrito"></option>');
+        $('#distritoId').html('<option name="distrito_id" value="" >Distrito</option>');
         getProvince();
     });
 
     $("#province").change(function(){
-        /** despues le cambias los nombres  a  tu  gusto XD */
-
         getDistrite();
     });
+    $('.btnVerReporte').click(function () {
+        $('.hidde').css('display', 'block');
+    })
 
 });
 
@@ -86,12 +87,9 @@ function printSelect(select, data) {
     var aux = "";
    
     $.each(data, function (index, val) {
-        /* iterate through array or object */
         aux += "<option value=" + val.Id + "> " + val.nombre + "</option>";
-
     });
 
-    /* imprime en el id(selector) los datos que se reciben del back-end listo los de provincia?? */
     $(select).html(aux);
    
 }

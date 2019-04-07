@@ -31,33 +31,6 @@
           <Property Name="Id_departamento" Type="int" Nullable="false" />
           <Property Name="nombre_normalizado" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <EntityType Name="Registro">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="apellido" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="documento" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="email" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="nacimiento" Type="date" Nullable="false" />
-          <Property Name="celular" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="distrito_id" Type="int" />
-          <Property Name="motivo" Type="varchar" MaxLength="50" />
-          <Property Name="mensaje" Type="varchar" MaxLength="600" />
-        </EntityType>
-        <Association Name="FK__Registro__distri__59FA5E80">
-          <End Role="Distrito" Type="Self.Distrito" Multiplicity="0..1" />
-          <End Role="Registro" Type="Self.Registro" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Distrito">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Registro">
-              <PropertyRef Name="distrito_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Distrito_Provincia">
           <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
           <End Role="Distrito" Type="Self.Distrito" Multiplicity="*" />
@@ -86,11 +59,6 @@
           <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Distrito" EntityType="Self.Distrito" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Provincia" EntityType="Self.Provincia" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Registro" EntityType="Self.Registro" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Registro__distri__59FA5E80" Association="Self.FK__Registro__distri__59FA5E80">
-            <End Role="Distrito" EntitySet="Distrito" />
-            <End Role="Registro" EntitySet="Registro" />
-          </AssociationSet>
           <AssociationSet Name="FK_Distrito_Provincia" Association="Self.FK_Distrito_Provincia">
             <End Role="Provincia" EntitySet="Provincia" />
             <End Role="Distrito" EntitySet="Distrito" />
@@ -108,14 +76,9 @@
           <EntitySet Name="Departamento" EntityType="FiltroModel.Departamento" />
           <EntitySet Name="Distrito" EntityType="FiltroModel.Distrito" />
           <EntitySet Name="Provincia" EntityType="FiltroModel.Provincia" />
-          <EntitySet Name="Registro" EntityType="FiltroModel.Registro" />
           <AssociationSet Name="FK_Provincia_Departamento" Association="FiltroModel.FK_Provincia_Departamento">
             <End Role="Departamento" EntitySet="Departamento" />
             <End Role="Provincia" EntitySet="Provincia" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Registro__distri__59FA5E80" Association="FiltroModel.FK__Registro__distri__59FA5E80">
-            <End Role="Distrito" EntitySet="Distrito" />
-            <End Role="Registro" EntitySet="Registro" />
           </AssociationSet>
           <AssociationSet Name="FK_Distrito_Provincia" Association="FiltroModel.FK_Distrito_Provincia">
             <End Role="Provincia" EntitySet="Provincia" />
@@ -139,7 +102,6 @@
           <Property Name="Id_provincia" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="nombre_normalizado" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Registro" Relationship="FiltroModel.FK__Registro__distri__59FA5E80" FromRole="Distrito" ToRole="Registro" />
           <NavigationProperty Name="Provincia" Relationship="FiltroModel.FK_Distrito_Provincia" FromRole="Distrito" ToRole="Provincia" />
         </EntityType>
         <EntityType Name="Provincia">
@@ -153,22 +115,6 @@
           <NavigationProperty Name="Departamento" Relationship="FiltroModel.FK_Provincia_Departamento" FromRole="Provincia" ToRole="Departamento" />
           <NavigationProperty Name="Distrito" Relationship="FiltroModel.FK_Distrito_Provincia" FromRole="Provincia" ToRole="Distrito" />
         </EntityType>
-        <EntityType Name="Registro">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="apellido" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="documento" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="nacimiento" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="celular" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="distrito_id" Type="Int32" />
-          <Property Name="motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="mensaje" Type="String" MaxLength="600" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Distrito" Relationship="FiltroModel.FK__Registro__distri__59FA5E80" FromRole="Registro" ToRole="Distrito" />
-        </EntityType>
         <Association Name="FK_Provincia_Departamento">
           <End Type="FiltroModel.Departamento" Role="Departamento" Multiplicity="1" />
           <End Type="FiltroModel.Provincia" Role="Provincia" Multiplicity="*" />
@@ -178,18 +124,6 @@
             </Principal>
             <Dependent Role="Provincia">
               <PropertyRef Name="Id_departamento" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Registro__distri__59FA5E80">
-          <End Type="FiltroModel.Distrito" Role="Distrito" Multiplicity="0..1" />
-          <End Type="FiltroModel.Registro" Role="Registro" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Distrito">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Registro">
-              <PropertyRef Name="distrito_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -237,22 +171,6 @@
                 <ScalarProperty Name="Id_departamento" ColumnName="Id_departamento" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Registro">
-            <EntityTypeMapping TypeName="FiltroModel.Registro">
-              <MappingFragment StoreEntitySet="Registro">
-                <ScalarProperty Name="mensaje" ColumnName="mensaje" />
-                <ScalarProperty Name="motivo" ColumnName="motivo" />
-                <ScalarProperty Name="distrito_id" ColumnName="distrito_id" />
-                <ScalarProperty Name="celular" ColumnName="celular" />
-                <ScalarProperty Name="nacimiento" ColumnName="nacimiento" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="documento" ColumnName="documento" />
-                <ScalarProperty Name="apellido" ColumnName="apellido" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

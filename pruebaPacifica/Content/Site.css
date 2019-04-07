@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #95938926;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -23,14 +24,17 @@ textarea {
     max-width: 280px;
 }
 
-.hidde{
+.hidde {
     display: none;
+    
 }
-.content{
+.table {
+    transition-duration: 1s;
+}
+.content {
     width: 100%;
     display: flex;
     justify-content: center;
-   
 }
 .labelCheck{
     width: 100%;
@@ -45,7 +49,7 @@ textarea {
     width: 50vw;
     height: auto;
     position: relative;
-    top: 2vh;
+    top: -1vh;
     background: rgba(0, 0, 0, 0.75);
     border-radius: 20px;
     padding: 4% !important;
@@ -65,4 +69,38 @@ textarea {
 }
 .btnSubmit{
     width: 50% !important;
+}
+.graciasTitle {
+    font-size: 7vw;
+    color: red;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition: width;
+    transition-delay: 0.2s;
+    text-align: center;
+}
+.subtitle {
+    font-size: 5vw;
+    font-weight: bold;
+    width: 70vw;
+    text-align: center;
+}
+.centerDiv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.btnVerReporte {
+    background: black;
+    color: white;
+    font-weight: bold;
+    padding: 1.5%;
+    width: 26.3vw;
+    font-size: 2vw;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btnVerReporte:hover{
+    transform: scale(1.2);
+    transition-duration: 0.5s;
 }

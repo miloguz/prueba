@@ -4,29 +4,29 @@
     <EntitySetMapping Name="Departamento">
       <EntityTypeMapping TypeName="FiltroModel.Departamento">
         <MappingFragment StoreEntitySet="Departamento">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="nombre_normalizado" ColumnName="nombre_normalizado" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Distrito">
       <EntityTypeMapping TypeName="FiltroModel.Distrito">
         <MappingFragment StoreEntitySet="Distrito">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Id_provincia" ColumnName="Id_provincia" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="nombre_normalizado" ColumnName="nombre_normalizado" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Id_provincia" ColumnName="Id_provincia" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Provincia">
       <EntityTypeMapping TypeName="FiltroModel.Provincia">
         <MappingFragment StoreEntitySet="Provincia">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="Id_departamento" ColumnName="Id_departamento" />
           <ScalarProperty Name="nombre_normalizado" ColumnName="nombre_normalizado" />
+          <ScalarProperty Name="Id_departamento" ColumnName="Id_departamento" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
