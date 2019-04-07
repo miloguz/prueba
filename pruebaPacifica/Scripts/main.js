@@ -1,4 +1,19 @@
 ﻿
+$(document).ready(function () {
+
+    $("#departament").change(function(){
+        $('#distritoId').html('<option value="" placeholder="Distrito"></option>');
+        getProvince();
+    });
+
+    $("#province").change(function(){
+        /** despues le cambias los nombres  a  tu  gusto XD */
+
+        getDistrite();
+    });
+
+});
+
 var parroquiaActive = 'false';
 $('#parroquiaCheck').click(function () {
 if (parroquiaActive == true) {
@@ -12,22 +27,85 @@ else{
 });
 
 
-function getDepartament() {
+function getProvince() {
+
+    var departamentId = $("#departament").val() 
 
     $.ajax({
-        url: 'http://localhost:3413/api/person',
-        type: 'POST',
+        url: '/Home/provinciasFiltro',
+        type: 'GET',
+        contentType: 'application/json',
         dataType: 'json',
-        data: person,
+        data: {
+            "departament": departamentId
+           
+        },
         success: function (data, textStatus, xhr) {
             console.log(data);
+
+            if (data.status == 1 || data.length > 0) {
+                printSelect("#province", data);
+            } else {
+                console.log("datos no encontrados")
+            }
         },
         error: function (xhr, textStatus, errorThrown) {
             console.log('Error in Operation');
         }
     });
-    // repositorio de YisusW
-    // GITHUB
-    // agregar como colaborador
-    // please!
+
 }
+
+function getDistrite() {
+
+    provinceId = $("#province").val()
+    
+    $.ajax({
+        url: 'Home/distritoFiltro',
+        type: 'GET',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: { "province": provinceId },
+        success: function (data, textStatus, xhr) {
+            console.log(data);
+
+            if (data.status == 1 || data.length > 0) {
+                printSelect("#distritoId" , data);
+            } else {
+                console.log("datos no encontrados")
+            }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            console.log('Error in Operation');
+        }
+    });        
+}
+
+function printSelect(select, data) {
+   
+    var aux = "";
+   
+    $.each(data, function (index, val) {
+        /* iterate through array or object */
+        aux += "<option value=" + val.Id + "> " + val.nombre + "</option>";
+
+    });
+
+    /* imprime en el id(selector) los datos que se reciben del back-end listo los de provincia?? */
+    $(select).html(aux);
+   
+}
+
+
+
+// paso uno 
+
+/** leer los datos que tellegan del post para luego filtrar las provincias
+ * paso 2 retornarlos con el request sea como sea , tipo object o lo que sea
+ * y el tres  ya esta hecho !
+ * que es imprimir en el select
+ * listo ahora  el front ya esta preparado para recibir los datos, y ya se sabe como comunicar el front con el
+ *  ahora  falta  procesar la informacion en el back y comunicar  el back con el front LISTO ?
+ *  esta  fcil una vez hecho eso ve haciendo la tabla que guarda  todo
+ *  recuerda que la tabla  del id no lleva foreign key (clave forane pues)
+ *  parse suerte thkx... voy a ponerme en eso ya chaito pues(Y)*/

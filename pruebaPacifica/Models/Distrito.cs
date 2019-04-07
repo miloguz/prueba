@@ -11,7 +11,9 @@ namespace pruebaPacifica.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
+       
     public partial class Distrito
     {
         public int Id { get; set; }

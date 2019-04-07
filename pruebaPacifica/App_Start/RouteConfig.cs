@@ -19,9 +19,9 @@ namespace pruebaPacifica
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
-               name: "registro",
-               url: "registro",
-               defaults: new { controller = "Home", action = "Registrar", id = UrlParameter.Optional }
+               name: "getProvince",
+               url: "{controller}/{action}/getProvince",
+               defaults: new { controller = "Home", action = "provinciasFiltro", id = UrlParameter.Optional }
            );
         }
     }

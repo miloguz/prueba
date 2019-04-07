@@ -81,3 +81,7 @@ C:\Users\Camilo\source\repos\pruebaPacifica\pruebaPacifica\obj\Debug\pruebaPacif
 C:\Users\Camilo\source\repos\pruebaPacifica\pruebaPacifica\obj\Debug\pruebaPacifica.csproj.CopyComplete
 C:\Users\Camilo\source\repos\pruebaPacifica\pruebaPacifica\obj\Debug\pruebaPacifica.dll
 C:\Users\Camilo\source\repos\pruebaPacifica\pruebaPacifica\obj\Debug\pruebaPacifica.pdb
+C:\Users\Camilo\source\repos\pruebaPacifica\pruebaPacifica\bin\EntityFramework.dll
+C:\Users\Camilo\source\repos\pruebaPacifica\pruebaPacifica\bin\EntityFramework.SqlServer.dll
+C:\Users\Camilo\source\repos\pruebaPacifica\pruebaPacifica\bin\EntityFramework.xml
+C:\Users\Camilo\source\repos\pruebaPacifica\pruebaPacifica\bin\EntityFramework.SqlServer.xml
